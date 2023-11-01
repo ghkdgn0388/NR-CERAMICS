@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* 내부로컬 폰트 파일로 연결 */
+@font-face {
+    font-family: "FreightNeo";
+    src: url(./tabmenu/fonts/FreightNeo-W03-Medium.ttf);
+}
+@font-face {
+    font-family: "NotoSansKR";
+    src: url(./tabmenu/fonts/NotoSansKR-Regular.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "FreightNeo","NotoSansKR";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(206, 205, 198);
+}
+section{
+    width: 800px;
+}
+img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* heading 영역 */
+.heading h1{
+    font-size: 30px;
+    text-align: center;
+    color: rgb(146, 145, 141);
+}
+.heading input[type="text"]{
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background:  #fff url(./tabmenu/img/search-icon.png) no-repeat
+    center left 5px;
+    background-size: 23px;
+    padding-left: 35px;
+}
+.heading input::placeholder{
+    font-style: italic;
+    transition: 0.3s;
+
+}
+.heading input:focus::placeholder{
+    opacity: 0;
+}
+
+/* tab 영역 */
+.tab-inner{
+    margin-top: 30px;
+}
+.btn{
+    list-style: none;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.btn li{
+    float: left;
+    width: 120px;
+    cursor: pointer;
+    background-color: #eee;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    /* 보더를 호버시 추가할때 미리 생성해두는 것이 좋음(레이아웃 틀어지지 않게해줌) */
+    border-top: 2px solid transparent;
+}
+.btn li:last-child{
+    border-right: none;
+}
+.btn li:hover,
+.btn li.active{
+    border-top-color: rgb(77, 76, 73);
+    background-color: #fff;
+}
+.tabs div{
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.tabs div.active{
+    display: block;
+}
+.tabs div img{
+    float: left;
+    margin-right: 10px;
+}
+.tabs div h2{
+    margin-bottom: 10px;
+    color: rgb(77, 76, 73);
+    font-size: 18px;
+}
